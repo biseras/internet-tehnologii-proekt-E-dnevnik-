@@ -1,0 +1,73 @@
+﻿@model IEnumerable<itproekt.Models.Dnevnik>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color:darkblue">Листа на работни денови со одржани часови и опис на час</h2>
+
+<p>
+    @if (User.IsInRole("Profesor"))
+    {
+        @Html.ActionLink("Додади нов работен ден", "Create", null, new { @class = "btn btn-primary btn-large" })
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.datum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prvcas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vtorcas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tretcas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cetvrticas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.petticas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.datum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prvcas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vtorcas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tretcas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cetvrticas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.petticas)
+        </td>
+        <td>
+            @Html.ActionLink("Прикажи детално", "Details", new { id = item.id }, new { @class = "btn btn-primary btn-large" })
+            @if (User.IsInRole("Direktor"))
+            {
+                @Html.ActionLink("Избриши", "Delete", new { id = item.id }, new { @class = "btn btn-primary btn-large" })
+            }
+            @if (User.IsInRole("Profesor"))
+            {
+                @Html.ActionLink("уреди ги информациите", "Edit", new { id = item.id }, new { @class = "btn btn-primary btn-large" })
+            }
+
+        </td>
+    </tr>
+}
+
+</table>

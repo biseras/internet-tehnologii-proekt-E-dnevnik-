@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web </h2>
+        <p>You .</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>*@
+</div>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+        <li data-target="#demo" data-slide-to="3"></li>
+        <li data-target="#demo" data-slide-to="4"></li>
+
+
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active" id="slika1">
+            <img src="~/Images/edn.jpg" />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Images/6.png" alt="Chicago" width="1100" height="500">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Images/slikadva.jpg" alt="New York" width="1100" height="500">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Images/slikatri.jpg" alt="New York" width="1100" height="500">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Images/classroom.jpg" alt="New York" width="1100" height="500">
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+<p style="height:35px"></p>
+<p></p>
+<p></p>
+<div class="row">
+    <div class="col-md-3">
+        @*<h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+    </div>
+    <div class="col-md-3">
+        @*<h2>Get more libraries</h2>*@
+        <p>
+            За сите подетални информации за образованието во нашата дршава посетете го сајтот на Министерството за образование и наука
+            @*NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.*@
+        </p>
+        <p><a class="btn btn-primary btn-large" href="https://mon.gov.mk/">МОН &raquo;</a></p>
+    </div>
+    <div class="col-md-3">
+        @*<h2>Get more libraries</h2>*@
+        <p>
+            Сите ученици кои се запишани во оваа учебна година да достават e-mail кај одговорните професори така што ќе може да имаат пристап до своите оценки.
+            @*NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">МОН &raquo;</a></p>*@
+    </div>
+    <div class="col-md-3">
+        @*<h2>Web </h2>
+            <p>You .</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+    </div>
+</div>
+
+<p style="height:35px"></p>
+<div style=" background-image: linear-gradient(180deg, #e3f2fd, #4169e1); " class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-3">
+        <p style="height:35px"></p>
+        <ul style="list-style-type:none">
+            <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Општи информации", "About", "Home")</strong></li>
+            <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Контакт", "Contact", "Home")</strong></li>
+            <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Оценки", "Index", "Ucenicis")</strong></li>
+            <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Работа на час", "Index", "Dnevniks")</strong></li>
+        </ul>
+        @*<p style="height:59px;"></p>*@
+    </div>
+    <div class="col-md-3">
+        <p style="height:35px"></p>
+        <ul style="list-style-type:none">
+            <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Известување", "Index", "Blog")</strong></li>
+            <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Додатни активности", "dodatniaktivnosti", "Blog")</strong></li>
+            <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Проекти", "proekti", "Blog")</strong></li>
+            <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Екскурзии и настани", "nastani", "Blog")</strong></li>
+        </ul>
+        <p style="height:59px;"></p>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+    @*<div class="col-md-6">
+
+            </div>
+        <div class="col-md-6">
+            <ul style="list-style-type:none;">
+
+                <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Известување", "Index", "Blog")</strong></li>
+                <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Додатни активности", "dodatniaktivnosti", "Blog")</strong></li>
+                <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Проекти", "proekti", "Blog")</strong></li>
+                <li style="color:darkblue; font-size:large;"><strong>@Html.ActionLink("Екскурзии и настани", "nastani", "Blog")</strong></li>
+            </ul>
+        </div>*@
+</div>

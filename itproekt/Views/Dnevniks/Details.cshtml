@@ -1,0 +1,69 @@
+﻿@model itproekt.Models.Dnevnik
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:darkblue">Детален приказ на работните денови</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prvcas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prvcas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vtorcas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vtorcas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tretcas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tretcas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cetvrticas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cetvrticas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.petticas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.petticas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (User.IsInRole("Profesor"))
+    {
+        @Html.ActionLink("Уреди ги информациите", "Edit", new { id = Model.id }, new { @class = "btn btn-primary btn-large" })
+    }
+    @Html.ActionLink("Листа на работни денови", "Index", new { @class = "btn btn-primary btn-large" })
+</p>

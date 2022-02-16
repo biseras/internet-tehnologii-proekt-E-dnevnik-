@@ -1,0 +1,72 @@
+﻿@model itproekt.Models.Dnevnik
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 style="color:darkblue">Бришење на работен ден</h2>
+
+<h3 style="color:darkblue">Сакате да го избришете овој ден?</h3>
+<div>
+    <h4 style="color:darkblue">Дневник</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prvcas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prvcas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vtorcas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vtorcas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tretcas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tretcas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cetvrticas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cetvrticas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.petticas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.petticas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Избриши" class="btn btn-primary btn-large" /> |
+            @Html.ActionLink("Листа на работни денови", "Index", new { @class = "btn btn-primary btn-large" })
+        </div>
+    }
+</div>

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<itproekt.Models.Ucenici>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Листа на ученици и нивните оценки</h2>
+
+<p>
+    @if (User.IsInRole("Profesor"))
+    {
+        @Html.ActionLink("Додади нов ученик", "Create", null, new { @class = "btn btn-primary btn-large" })
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.makedonski)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.matematika)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.angliski)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prirodninauki)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.muzicko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fizicko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.likovno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.izostanoci)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.makedonski)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.matematika)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.angliski)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prirodninauki)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.muzicko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fizicko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.likovno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.izostanoci)
+        </td>
+        <td>
+            @if (User.IsInRole("Profesor"))
+            {
+                @Html.ActionLink("Уреди ги информациите", "Edit", new { id = item.broj }, new { @class = "btn btn-primary btn-large" })
+            }
+            @Html.ActionLink("Прикажи детално", "Details", new { id = item.broj }, new { @class = "btn btn-primary btn-large" })
+            @if (User.IsInRole("Direktor"))
+            {
+                @Html.ActionLink("Избриши го ученикот", "Delete", new { id = item.broj }, new { @class = "btn btn-primary btn-large" })
+            }
+        </td>
+    </tr>
+}
+
+</table>

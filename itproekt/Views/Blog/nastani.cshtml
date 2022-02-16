@@ -1,0 +1,39 @@
+﻿@model IEnumerable<itproekt.Table>
+
+@{
+    ViewBag.Title = "nastani";
+}
+
+<h2 style="color:darkblue">Известувања за организираните настани и екскурзии во кои може да учествуваат учениците</h2>
+
+
+<table style="border-collapse:collapse">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <p></p>
+                <b style="color:brown; font-size:large">@Html.DisplayFor(modelItem => item.Btitle)</b>
+                <p></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Категорија: <strong style="color:brown">@Html.DisplayFor(modelItem => item.BCategory)</strong>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BDesc)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BPa)
+            </td>
+        </tr>
+    }
+
+</table>

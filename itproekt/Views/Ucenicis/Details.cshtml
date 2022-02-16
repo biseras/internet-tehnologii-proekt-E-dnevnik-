@@ -1,0 +1,101 @@
+﻿@model itproekt.Models.Ucenici
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детален приказ на учениците и нивните оценки</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.makedonski)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.makedonski)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.matematika)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matematika)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.angliski)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.angliski)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prirodninauki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prirodninauki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.muzicko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.muzicko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fizicko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fizicko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.likovno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.likovno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.izostanoci)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.izostanoci)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (User.IsInRole("Profesor"))
+    {
+        @Html.ActionLink("Уреди ги информациите", "Edit", new { id = Model.broj }, new { @class = "btn btn-primary btn-large" })
+    }
+    @Html.ActionLink("Листа на ученици", "Index", new { @class = "btn btn-primary btn-large" })
+</p>
